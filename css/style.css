@@ -738,8 +738,8 @@ h3 {
 @media (max-width: 767px) {
   /* line 2, ../../Arafath/CL/December/236. Event-02/HTML/scss/_section_title.scss */
   .section_title h3 {
-    font-size: 30px;
-    line-height: 36px;
+    font-size: 26px;
+    line-height: 26px;
   }
 }
 
@@ -795,6 +795,9 @@ h3 {
   /* line 42, ../../Arafath/CL/December/236. Event-02/HTML/scss/_section_title.scss */
   .section_title p br {
     display: none;
+  }
+  .section_title p{
+    font-size: 15px;
   }
 }
 
@@ -993,13 +996,21 @@ h3 {
 /* line 16, ../../Arafath/CL/December/236. Event-02/HTML/scss/_header.scss */
 .header-area .main-header-area {
   background: transparent;
-  padding-top: 28px;
+  padding-top: 45px;
+  padding-left: 150px;
 }
 
 @media (max-width: 767px) {
   /* line 16, ../../Arafath/CL/December/236. Event-02/HTML/scss/_header.scss */
   .header-area .main-header-area {
     padding: 10px 10px;
+    padding-top: 20px;
+  }
+}
+@media (max-width: 767px) {
+  /* line 16, ../../Arafath/CL/December/236. Event-02/HTML/scss/_header.scss */
+  .buy_tkt{
+    margin-left: 100px;
   }
 }
 
@@ -1007,6 +1018,7 @@ h3 {
   /* line 16, ../../Arafath/CL/December/236. Event-02/HTML/scss/_header.scss */
   .header-area .main-header-area {
     padding: 10px 10px;
+    padding-left: 150px;
   }
 }
 
@@ -1014,13 +1026,14 @@ h3 {
   /* line 16, ../../Arafath/CL/December/236. Event-02/HTML/scss/_header.scss */
   .header-area .main-header-area {
     padding-top: 0px;
+    padding-left: 150px;
   }
 }
 
 @media (min-width: 1200px) and (max-width: 1500px) {
   /* line 16, ../../Arafath/CL/December/236. Event-02/HTML/scss/_header.scss */
   .header-area .main-header-area {
-    padding-top: 0px;
+    padding-top: 45px;
   }
 }
 
@@ -1063,23 +1076,11 @@ h3 {
     width: 70px;
   }
 }
-
-/* line 58, ../../Arafath/CL/December/236. Event-02/HTML/scss/_header.scss */
-.header-area .main-header-area .buy_tkt {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-align-items: center;
-  -moz-align-items: center;
-  -ms-align-items: center;
-  align-items: center;
-  -webkit-justify-content: flex-end;
-  -moz-justify-content: flex-end;
-  -ms-justify-content: flex-end;
-  justify-content: flex-end;
-  -ms-flex-pack: flex-end;
+@media (max-width: 767px) {
+  /* line 22, ../../Arafath/CL/December/236. Event-02/HTML/scss/_section_title.scss */
+  .section_title h3 br {
+    display: none;
+  }
 }
 
 @media (min-width: 992px) and (max-width: 1200px) {
@@ -1136,13 +1137,49 @@ h3 {
     margin-left: 0;
   }
 }
+@media (max-width: 767px) {
+  /* line 16, ../../Arafath/CL/December/236. Event-02/HTML/scss/_header.scss */
+  .header-area .main-header-area .buy_tkt .book_btn {
+    align-items: center;
+    margin-right: 90px;
+  }
+}
 
+@media (min-width: 768px) and (max-width: 991px) {
+  .header-area .main-header-area .buy_tkt .book_btn {
+    align-items: center;
+    
+  }
+}
+@media (max-width: 767px) {
+  /* line 16, ../../Arafath/CL/December/236. Event-02/HTML/scss/_header.scss */
+  .header-area .main-header-area .buy_tkt .book_btn a {
+    font-size: 10px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .header-area .main-header-area .buy_tkt .book_btn a {
+    font-size: 10px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+  .header-area .main-header-area .buy_tkt .book_btn a {
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1500px) {
+  .header-area .main-header-area .buy_tkt .book_btn a {
+    font-size: 16px;
+  }
+}
 /* line 100, ../../Arafath/CL/December/236. Event-02/HTML/scss/_header.scss */
 .header-area .main-header-area .buy_tkt .book_btn a {
   background: #FF4533;
   font-family: "Electrolize", sans-serif;
   padding: 12px 46px;
-  font-size: 16px;
   font-weight: bold;
   border: 1px solid transparent;
   color: #fff;
@@ -1151,7 +1188,14 @@ h3 {
   border-radius: 0px;
   text-transform: capitalize;
 }
-
+@media (max-width: 676px) {
+  .header-area .main-header-area .buy_tkt .book_btn{
+    margin-top: 10px;
+  }
+  .header-area .main-header-area .buy_tkt .book_btn a {
+    padding: 5px 5px;
+  }
+}
 @media (min-width: 992px) and (max-width: 1200px) {
   /* line 100, ../../Arafath/CL/December/236. Event-02/HTML/scss/_header.scss */
   .header-area .main-header-area .buy_tkt .book_btn a {
@@ -1177,7 +1221,17 @@ h3 {
   position: relative;
   margin: 0  20px;
 }
+@media (max-width: 767px) {
+  .header-area .main-header-area .main-menu ul li {
+    margin: 0 9px;
+  }
+}
 
+@media (min-width: 768px) and (max-width: 991px) {
+  .header-area .main-header-area .main-menu ul li {
+    margin: 0 9px;
+  }
+}
 @media (min-width: 992px) and (max-width: 1200px) {
   /* line 126, ../../Arafath/CL/December/236. Event-02/HTML/scss/_header.scss */
   .header-area .main-header-area .main-menu ul li {
@@ -1199,16 +1253,29 @@ h3 {
   text-transform: capitalize;
   font-weight: 400;
   display: inline-block;
-  padding: 30px 0 30px  0;
   font-family: "Electrolize", sans-serif;
   position: relative;
   text-transform: uppercase;
+}
+@media (max-width: 767px) {
+  .header-area .main-header-area .main-menu ul li a {
+    font-size: 10px;  
+    padding: 30px 0 5px  0;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .header-area .main-header-area .main-menu ul li a {
+    font-size: 10px;
+    padding: 30px 0 30px  0;
+  }
 }
 
 @media (min-width: 992px) and (max-width: 1200px) {
   /* line 139, ../../Arafath/CL/December/236. Event-02/HTML/scss/_header.scss */
   .header-area .main-header-area .main-menu ul li a {
     font-size: 15px;
+    padding: 30px 0 30px  0;
   }
 }
 
@@ -1216,6 +1283,7 @@ h3 {
   /* line 139, ../../Arafath/CL/December/236. Event-02/HTML/scss/_header.scss */
   .header-area .main-header-area .main-menu ul li a {
     font-size: 15px;
+    padding: 30px 0 30px  0;
   }
 }
 
@@ -1607,7 +1675,7 @@ h3 {
 @media (max-width: 767px) {
   /* line 65, ../../Arafath/CL/December/236. Event-02/HTML/scss/_slider.scss */
   .slider_area .single_slider .slider_text h3 {
-    font-size: 15px;
+    font-size: 26px;
     line-height: 1.2;
     margin: 20px 0;
   }
@@ -1634,7 +1702,6 @@ h3 {
   color: #FFF;
   margin-bottom: 34px;
   margin-top: 10px;
-  
   font-family: "Electrolize", sans-serif;
   font-weight: bold;
 }
@@ -1649,7 +1716,10 @@ h3 {
 @media (max-width: 767px) {
   /* line 86, ../../Arafath/CL/December/236. Event-02/HTML/scss/_slider.scss */
   .slider_area .single_slider .slider_text p {
-    font-size: 16px;
+    font-size: 14px;
+  }
+  .about_thumb img{
+    margin-top: -55px;
   }
 }
 
@@ -1927,7 +1997,7 @@ h3 {
 
 /* line 1, ../../Arafath/CL/December/236. Event-02/HTML/scss/_about.scss */
 .about_area {
-  padding-bottom: 150px;
+  padding-bottom: 20px;
   position: relative;
   margin-top: -2px;
 }
@@ -1991,6 +2061,7 @@ h3 {
   .about_area .about_thumb .shap_3 {
     display: none;
   }
+  
 }
 
 @media (min-width: 992px) and (max-width: 1200px) {
@@ -2023,6 +2094,17 @@ h3 {
 .about_area .about_info p {
   margin-top: 40px;
   margin-bottom: 50px;
+}
+@media (max-width:767px) {
+  .about_info{
+    text-align: center;
+  }
+  .about_info p{
+    font-size: 15px;
+  }
+  .about_info h3{
+    font-size: 20px;
+  }
 }
 
 /* line 1, ../../Arafath/CL/December/236. Event-02/HTML/scss/_bradcam.scss */
@@ -2065,6 +2147,7 @@ h3 {
   .bradcam_area .single_bradcam {
     padding: 150px 0;
   }
+
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
@@ -2237,6 +2320,15 @@ h3 {
   .performar_area .single_performer {
     margin-bottom: 30px;
   }
+  .performar_area .single_performer h4{
+    font-size: 20px;
+    text-align: center;
+  }
+  .performar_area .single_performer span{
+    font-size: 18px;
+    display: block;
+    text-align: center;
+  }
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
@@ -2244,12 +2336,24 @@ h3 {
   .performar_area .single_performer {
     margin-bottom: 50px;
   }
+  .performar_area .single_performer h4{
+    font-size: 25px;
+  }
+  .performar_area .single_performer span{
+    font-size: 20px;
+  }
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
   /* line 12, ../../Arafath/CL/December/236. Event-02/HTML/scss/_performer.scss */
   .performar_area .single_performer {
     margin-bottom: 40px;
+  }
+  .performar_area .single_performer h4{
+    font-size: 30px;
+  }
+  .performar_area .single_performer span{
+    font-size: 20px;
   }
 }
 
@@ -2265,7 +2369,7 @@ h3 {
 
 /* line 30, ../../Arafath/CL/December/236. Event-02/HTML/scss/_performer.scss */
 .performar_area .single_performer .performer_heading h4 {
-  font-size: 30px;
+ 
   font-family: "Electrolize", sans-serif;
   color: #fff;
   font-weight: 400;
@@ -2276,7 +2380,7 @@ h3 {
 .performar_area .single_performer .performer_heading span {
   color: #FF4533;
   font-weight: 400;
-  font-size: 20px;
+ 
 }
 
 
@@ -2587,11 +2691,29 @@ h3 {
     padding-top: 60px;
     padding-bottom: 30px;
   }
+  
+}
+@media (max-width: 767px) {
+  .footer .footer_top .footer_widget h3 h4 p a{
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .footer .footer_top .footer_widget h3 h4 p a{
+    font-size: 25px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+  .footer .footer_top .footer_widget h3 h4 p a{
+    font-size: 30px;
+  }
 }
 
 /* line 17, ../../Arafath/CL/December/236. Event-02/HTML/scss/_footer.scss */
 .footer .footer_top .footer_widget h4 {
-  font-size: 30px;
+  
   font-weight: 400;
   color: #FF4533;
   margin-bottom: 24px;
@@ -2599,7 +2721,7 @@ h3 {
 
 /* line 23, ../../Arafath/CL/December/236. Event-02/HTML/scss/_footer.scss */
 .footer .footer_top .footer_widget h3 {
-  font-size: 30px;
+  
   font-weight: 400;
   color: #fff;
 }
