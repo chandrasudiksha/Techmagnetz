@@ -13,6 +13,7 @@
     <!-- Place favicon.ico in the root directory -->
 
     <!-- CSS here -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">   
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/magnific-popup.css">
@@ -26,40 +27,169 @@
 
     <link rel="stylesheet" href="css/style.css">
     <!-- <link rel="stylesheet" href="css/responsive.css"> -->
-     <style>
+     
+<style>
+    .gallery {
+        --s: 200px; /* control the size */
+        --g: 10px;  /* control the gap */
+        --f: 1.5;   /* control the scale factor */
+      
+        display: grid;
+        gap: var(--g);
+        width: calc(3 * var(--s) + 2 * var(--g));
+        aspect-ratio: 1;
+        grid-template-columns: repeat(3, auto);
+    }
+
+    .gallery > img {
+        width: 0;
+        height: 0;
+        min-height: 100%;
+        min-width: 100%;
+        object-fit: cover;
+        cursor: pointer;
+        filter: grayscale(80%);
+        transition: .35s linear;
+    }
+
+    .gallery img:hover {
+        filter: grayscale(0);
+        width: calc(var(--s) * var(--f));
+        height: calc(var(--s) * var(--f));
+    }
+
+    /* Media Queries for responsiveness */
+    @media (max-width: 1200px) {
         .gallery {
-            --s: 200px; /* control the size */
-            --g: 10px;  /* control the gap */
-            --f: 1.5;   /* control the scale factor */  
-          
-            display: grid;
-            gap: var(--g);
-            width: calc(3*var(--s) + 2*var(--g));
-            aspect-ratio: 1;
-            grid-template-columns: repeat(3,auto);
-            
-            
-          } 
-          
-          .gallery > img {
-            width: 0;
-            height: 0;
-            min-height: 100%;
-            min-width: 100%;
-            object-fit: cover;
-            cursor: pointer;
-            filter: grayscale(80%);
-            transition: .35s linear;
-          }
-          
-          .gallery img:hover{
-            filter: grayscale(0);
-            width:  calc(var(--s)*var(--f));
-            height: calc(var(--s)*var(--f));
-          }
-          
-         
-     </style>
+            width: calc(2 * var(--s) + var(--g));
+            grid-template-columns: repeat(1, auto);
+        }
+    }
+
+    @media (max-width: 768px) {
+        .gallery {
+            width: calc(var(--s) + var(--g));
+            grid-template-columns: repeat(1, auto);
+        }
+    }
+
+    @media (max-width: 480px) {
+        .gallery > img {
+            width: calc(var(--s) * 0.8); /* Slightly smaller images on small screens */
+            height: calc(var(--s) * 0.8);
+        }
+    }
+
+    .border-shape {
+        background: #FF4533 none repeat scroll 0 0;
+        color: #fff;
+        display: block;
+        height: 3px;
+        left: 0;
+        margin: 20px auto;
+        position: relative;
+        right: 0;
+        text-align: center;
+        top: 0;
+        width: 80px;
+    }
+
+    .border-shape::before {
+        background: #FF4533 none repeat scroll 0 0;
+        bottom: 0;
+        content: "";
+        height: 1px;
+        left: 80px;
+        margin: 0 auto;
+        position: absolute;
+        text-align: center;
+        top: 1px;
+        width: 100px;
+    }
+
+    .border-shape::after {
+        background: #FF4533 none repeat scroll 0 0;
+        bottom: 0;
+        content: "";
+        height: 1px;
+        margin: 0 auto;
+        position: absolute;
+        right: 80px;
+        text-align: center;
+        top: 1px;
+        width: 100px;
+    }
+
+    /*FOOTER*/
+    footer.new-footer {
+        width: 100%;
+        background-color: #121619;
+        color: #fff;
+    }
+
+    .top_header {
+        padding: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
+
+    .top_header section {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .top_header span {
+        padding: 0 1rem;
+        color: #fff;
+    }
+    .top_header a{
+        color: #fff;
+    }
+    .top_header .fa {
+        color: #FF4533;
+        font-size: 35px;
+    }
+
+    footer.new-footer .border-shape {
+        width: 40%;
+    }
+
+    footer.new-footer .border-shape::before {
+        width: 100%;
+        left: 120px;
+    }
+
+    footer.new-footer .border-shape::after {
+        width: 100%;
+        right: 120px;
+    }
+
+    footer.new-footer .bottom_content section {
+        padding: 1.5rem 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    @media (max-width: 820px) {
+        .top_header {
+            padding: 1rem;
+            display: block;
+        }
+
+        .top_header section {
+            margin: 40px 0;
+            align-items: left;
+            justify-content: left;
+        }
+
+        
+    }
+</style>
 </head>
 
 <body>
@@ -74,14 +204,7 @@
                 <div class="container">
                     <div class="header_bottom_border">
                         <div class="row align-items-center">
-                            <div class="col-xl-3 col-lg-3">
-                                <div class="logo">
-                                    <a href="index.html">
-                                        <img src="img/logo1.png" alt="">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-xl-6 col-lg-6">
+                            <div class="col-xl-9 col-lg-9">
                                 <div class="main-menu  d-none d-lg-block">
                                     <nav>
                                         <ul id="navigation">
@@ -93,6 +216,8 @@
                                                     <li><a href="#Non-Tech">Non-Technical</a></li>
                                                 </ul>
                                             </li>
+                                            
+                                            <li><a href="#">Poster</a></li>
                                             <li><a href="#gallery1">Gallery</a></li>
                                             <li><a href="#contact">Contact</a></li>
                                         </ul>
@@ -125,15 +250,10 @@
                 <div class="row align-items-center justify-content-center">
                     <div class="col-xl-12">
                         <div class="slider_text text-center">
-                            <div class="shape_1 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s">
-                                <img src="img/shape_1.svg" alt="">
-                            </div>
-                            <div class="shape_2 wow fadeInDown" data-wow-duration="1s" data-wow-delay=".2s">
-                                <img src="img/shape_2.svg" alt="">
-                            </div>
                             <span class="wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".3s">4 April, 2025</span>
-                            <h3 class="wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".4s" style="font-size: 75px;">TechMagnetz 2K25</h3>
-                            <p class="wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".5s">Hindusthan Institute of Technology, Coimbatore</p>
+                            <h3 class="wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".4s">TechMagnetz   2K25</h3>
+                            <p class="wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".5s">Hindusthan Institute of Technology</p>
+                            <p class="wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".5s" style="color: #FF4533;">Information Technology</p>
                         </div>
                     </div>
                 </div>
@@ -148,7 +268,7 @@
             <div class="col-lg-8">
                 <div class="section_title text-center mb-80">
                     <h3 class="wow fadeInRight" data-wow-duration="1s" data-wow-delay=".3s" >About Program</h3>
-                    <p class="wow fadeInRight" data-wow-duration="1s" data-wow-delay=".4s" >The event regularly attracts a diverse range of attendees from around the world, across different professions, and with different.</p>
+                    <p class="wow fadeInRight" data-wow-duration="1s" data-wow-delay=".4s" >The National Level Technical Symposium organized by the Department of Information Technology.</p>
                 </div>
             </div>
         </div>
@@ -165,8 +285,8 @@
             </div>
             <div class="col-lg-5 col-md-6">
                 <div class="about_info pl-68">
-                    <h4 class=" wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".5s">It’s time to book your seat</h4>
-                    <p  class=" wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".6s">The event regularly attracts a diverse range of attendees from around the world, across different professions, and with different levels of experience transform your business.</p>
+                    <h4 class=" wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".5s">It’s time to register</h4>
+                    <p  class=" wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".6s">The event bring together bright minds to showcase your skills and knowledge. It serves as a platform for students to engage in innovative competitions.</p>
                     <a href="#" class="boxed-btn3  wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".7s">Register Now</a>
                 </div>
             </div>
@@ -181,7 +301,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section_title mb-80">
-                        <h3 class="wow fadeInRight" data-wow-duration="1s" data-wow-delay=".3s" style="font-size: 50px;">Technical Events</h3>
+                        <h3 class="wow fadeInRight" data-wow-duration="1s" data-wow-delay=".3s">Technical Events</h3>
                     </div>
                 </div>
             </div>
@@ -211,7 +331,7 @@
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6">
-                            <div  class="single_performer wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">
+                            <div  class="single_performer wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">
                                 <div data-tilt class="thumb">
                                     <img src="img/3.png" alt="">
                                 </div>
@@ -244,7 +364,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="section_title mb-80">
-                    <h3 class="wow fadeInRight" data-wow-duration="1s" data-wow-delay=".3s" style="font-size: 50px;">Non-Technical Events</h3>
+                    <h3 class="wow fadeInRight" data-wow-duration="1s" data-wow-delay=".3s">Non-Technical Events</h3>
                 </div>
             </div>
         </div>
@@ -308,7 +428,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section_title text-center mb-80  wow fadeInRight" data-wow-duration="1s" data-wow-delay=".3s">
-                        <h3 style="font-size: 50px;">Gallery</h3>
+                        <h3>Gallery</h3>
                     </div>
                 </div>
             </div>
@@ -336,8 +456,8 @@
                         <div class="footer_widget">
                             <div class="address_details text-center">
                                 <h4 class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">4 April, 2025</h4>
-                                <h3 class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s" style="font-size:30px;">Hindusthan Institute of Technology,Coimbatore</h3>
-                                <p class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">The event regularly attracts a diverse range of attendees from around the world.</p>
+                                <h3 class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s" style="font-size:30px;">Hindusthan Institute of Technology</h3>
+                                <p class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">Department of Information Technology</p>
                                 <a href="#" class="boxed-btn3 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s">Register Now</a>
                             </div>
                         </div>
@@ -345,6 +465,29 @@
                 </div>
             </div>
         </div>
+        <div class="top_header">
+            <section>
+                <span><i class="fa fa-map-marker"></i></span>
+                <span><a href="https://www.google.com/maps/place/Hindusthan+Institute+of+Technology/@10.8945458,76.9944922,17z/data=!3m1!4b1!4m6!3m5!1s0x3ba85abaa31dcfa9:0x72d5daed0d228046!8m2!3d10.8945458!4d76.9970671!16s%2Fg%2F11c57vxzng?entry=ttu&g_ep=EgoyMDI1MDIyNi4xIKXMDSoASAFQAw%3D%3D" target="_blank">Hindusthan Institute of Technology, Malumichampatti, Coimbatore</a></span>
+            </section>
+            <section>
+                <span><i class="fa fa-phone"></i></span>
+                <span><a href="tel:+91 9944353626">9944353626</a></span>
+            </section>
+            <section>
+                <span><i class="fa fa-envelope"></i></span>
+                <span><a href="mailto:techmagnetz@gmail.com">techmagnetz@gmail.com</a></span>
+            </section>
+            <section>
+                <span><i class="fa fa-instagram"></i></span>
+                <span><a href="https://www.instagram.com/techmagnetz_2k25" target="_blank">techmagnetz_2k25</a></span>
+            </section>
+            
+        </div>
+        <span class="border-shape"></span>
+        
+        </div>
+
         <div class="copy-right_text">
             <div class="container">
                 <div class="row">
