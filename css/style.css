@@ -1722,6 +1722,62 @@ h3 {
     margin-top: -55px;
   }
 }
+.single_performer {
+  position: relative;
+}
+
+.thumb-container {
+  position: relative;
+  overflow: hidden; /* Hide anything outside of the container */
+}
+
+.thumb {
+  position: relative;
+  transition: opacity 0.3s ease; /* Transition effect for opacity */
+}
+
+.thumb img {
+  width: 100%;
+  height: auto;
+  transition: opacity 0.3s ease; /* Transition effect for the image */
+}
+
+/* Performer's heading (always visible) */
+.performer_heading {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+  color: #fff;
+  text-align: center;
+  z-index: 10;
+}
+
+/* List of rules (hidden by default) */
+.performer_heading ul {
+  list-style-type: none;
+  padding: 10px;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #ddd;
+  display: none;
+}
+
+.performer_heading ul li {
+  margin-bottom: 5px;
+  text-align: left;
+}
+
+/* Hover effect */
+.thumb-container:hover .performer_heading ul {
+  display: block; /* Show the list of rules on hover */
+}
+
+.thumb-container:hover .thumb img {
+  opacity: 0.4; /* Reduce image opacity on hover */
+}
 
 /* line 100, ../../Arafath/CL/December/236. Event-02/HTML/scss/_slider.scss */
 .slider_area .single_slider .slider_text .video_service_btn > a {
