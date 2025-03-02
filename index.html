@@ -24,72 +24,66 @@
     <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/slicknav.css">
-
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="css/style.css">
     <!-- <link rel="stylesheet" href="css/responsive.css"> -->
      
 <style>
-    
+    /* Gallery Container */
+.gallery-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+}
 
+.gallery {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* auto-fill and responsive columns */
+    width: 100%;
+    max-width: 1200px;
+}
+
+.gallery img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    cursor: pointer;
+    filter: grayscale(60%);
+}
+
+.gallery img:hover {
+    filter: grayscale(0);
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Media Queries */
+@media (max-width: 1200px) {
     .gallery {
-        --s: 200px; /* control the size */
-        --g: 10px;  /* control the gap */
-        --f: 1.5;   /* control the scale factor */
-      
-        display: grid;
-        gap: var(--g);
-        width: calc(3 * var(--s) + 2 * var(--g));
-        aspect-ratio: 1;
-        grid-template-columns: repeat(3, auto);
+        grid-template-columns: repeat(3, 1fr); /* Three columns for larger screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr); /* Two columns for medium screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery {
+        grid-template-columns: 1fr; /* One column for smaller screens */
     }
 
-    .gallery > img {
-        width: 0;
-        height: 0;
-        min-height: 100%;
-        min-width: 100%;
-        object-fit: cover;
-        cursor: pointer;
-        filter: grayscale(80%);
-        transition: .35s linear;
+    .gallery img {
+        width: 100%; /* Ensuring images are responsive and full-width on mobile */
     }
-
-    .gallery img:hover {
-        filter: grayscale(0);
-        width: calc(var(--s) * var(--f));
-        height: calc(var(--s) * var(--f));
-    }
-
-    /* Media Queries for responsiveness */
-    @media (max-width: 1200px) {
-        .gallery {
-            width: calc(2 * var(--s) + var(--g));
-            grid-template-columns: repeat(1, auto);
-        }
-    }
-
-    @media (max-width: 768px) {
-        .gallery {
-            width: calc(var(--s) + var(--g));
-            grid-template-columns: repeat(1, auto);
-        }
-    }
-
-    @media (max-width: 480px) {
-        .gallery{
-            --s: 200px;
-            --g: 15px;  /* control the gap */
-            --f: 1; 
-        }
-       
-        .gallery > img {
-            width: calc(var(--s) * 0.5); /* Slightly smaller images on small screens */
-            height: calc(var(--s) * 0.5);
-        }
-        
-    }
-
-    .border-shape {
+}
+.border-shape {
         background: #FF4533 none repeat scroll 0 0;
         color: #fff;
         display: block;
@@ -300,61 +294,91 @@
     </div>
 </div>
 <!-- about_area_end  -->
-
-    <!-- performar_area_start  -->
-    <div class="performar_area black_bg" id="Tech">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section_title mb-80">
-                        <h3 class="wow fadeInRight" data-wow-duration="1s" data-wow-delay=".3s">Technical Events</h3>
-                    </div>
+     <!-- performar_area_start -->
+<div class="performar_area black_bg" id="Tech">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section_title mb-80">
+                    <h3 class="wow fadeInRight" data-wow-duration="1s" data-wow-delay=".3s">Technical Events</h3>
                 </div>
             </div>
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="row">
-                        <div class="col-lg-6 col-md-6">
-                            <div  class="single_performer wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">
-                                <div data-tilt class="thumb">
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6">
+                        <div class="single_performer wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">
+                            <div class="thumb-container">
+                                <div class="thumb">
                                     <img src="img/1.png" alt="">
                                 </div>
                                 <div class="performer_heading">
                                     <h4>Paper Presentation</h4>
                                     <span>Venue: Nila hall</span>
+                                    <!-- List of rules -->
+                                    <ul>
+                                        <li>Rule 1: Presentation must be 10 minutes long.</li>
+                                        <li>Rule 2: No plagiarism allowed.</li>
+                                        <li>Rule 3: Use of multimedia is encouraged.</li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-6 col-md-6">
-                            <div  class="single_performer wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s">
-                                <div data-tilt class="thumb">
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="single_performer wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s">
+                            <div class="thumb-container">
+                                <div class="thumb">
                                     <img src="img/2.png" alt="">
                                 </div>
                                 <div class="performer_heading">
                                     <h4>Quizzy</h4>
                                     <span>Venue: IT Lab</span>
+                                    <!-- List of rules -->
+                                    <ul>
+                                        <li>Rule 1: Maximum 2 people per team.</li>
+                                        <li>Rule 2: Questions will be based on general knowledge.</li>
+                                        <li>Rule 3: No mobile phones allowed.</li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-6 col-md-6">
-                            <div  class="single_performer wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">
-                                <div data-tilt class="thumb">
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="single_performer wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">
+                            <div class="thumb-container">
+                                <div class="thumb">
                                     <img src="img/3.png" alt="">
                                 </div>
                                 <div class="performer_heading">
                                     <h4>Digital Picasso</h4>
                                     <span>Venue: MBA Lab</span>
+                                    <!-- List of rules -->
+                                    <ul>
+                                        <li>Rule 1: Digital art must be created live.</li>
+                                        <li>Rule 2: Use of Photoshop, Illustrator allowed.</li>
+                                        <li>Rule 3: Theme will be provided on the spot.</li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-6 col-md-6">
-                            <div   class="single_performer wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s">
-                                <div data-tilt class="thumb">
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="single_performer wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s">
+                            <div class="thumb-container">
+                                <div class="thumb">
                                     <img src="img/4.png" alt="">
                                 </div>
                                 <div class="performer_heading">
                                     <h4>Code Mantra</h4>
                                     <span>Venue: MBA Lab</span>
+                                    <!-- List of rules -->
+                                    <ul>
+                                        <li>Rule 1: Use only open-source tools for coding.</li>
+                                        <li>Rule 2: Teams can have up to 3 members.</li>
+                                        <li>Rule 3: Solutions must be submitted within the given timeframe.</li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
@@ -363,8 +387,9 @@
             </div>
         </div>
     </div>
-    <!-- performar_area_end  -->
-<!-- performar_area_start  -->
+</div>
+<!-- performar_area_end -->
+<!-- performar_area_start -->
 <div class="performar_area black_bg" id="Non-Tech">
     <div class="container">
         <div class="row">
@@ -378,46 +403,78 @@
             <div class="col-lg-8">
                 <div class="row">
                     <div class="col-lg-6 col-md-6">
-                        <div  class="single_performer wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">
-                            <div data-tilt class="thumb">
-                                <img src="img/1.png" alt="">
-                            </div>
-                            <div class="performer_heading">
-                                <h4>Talent Show</h4>
-                                <span>Venue: Raman Auditorium</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6">
-                        <div  class="single_performer wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s">
-                            <div data-tilt class="thumb">
-                                <img src="img/2.png" alt="">
-                            </div>
-                            <div class="performer_heading">
-                                <h4>E-Sports</h4>
-                                <span>Venue: Classroom-404</span>
+                        <div class="single_performer wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">
+                            <div class="thumb-container">
+                                <div class="thumb">
+                                    <img src="img/1.png" alt="">
+                                </div>
+                                <div class="performer_heading">
+                                    <h4>Talent Show</h4>
+                                    <span>Venue: Raman Auditorium</span>
+                                    <!-- List of rules -->
+                                    <ul>
+                                        <li>Rule 1: No explicit content.</li>
+                                        <li>Rule 2: Maximum performance time: 5 minutes.</li>
+                                        <li>Rule 3: All participants must register in advance.</li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6">
-                        <div  class="single_performer wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">
-                            <div data-tilt class="thumb">
-                                <img src="img/3.png" alt="">
-                            </div>
-                            <div class="performer_heading">
-                                <h4>Mingle Bingo</h4>
-                                <span>Venue: Nila Hall</span>
+                        <div class="single_performer wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s">
+                            <div class="thumb-container">
+                                <div class="thumb">
+                                    <img src="img/2.png" alt="">
+                                </div>
+                                <div class="performer_heading">
+                                    <h4>E-Sports</h4>
+                                    <span>Venue: Classroom-404</span>
+                                    <!-- List of rules -->
+                                    <ul>
+                                        <li>Rule 1: No cheating allowed.</li>
+                                        <li>Rule 2: Maximum 5 players per team.</li>
+                                        <li>Rule 3: All games must be played in fair spirit.</li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6">
-                        <div   class="single_performer wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s">
-                            <div data-tilt class="thumb">
-                                <img src="img/4.png" alt="">
+                        <div class="single_performer wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">
+                            <div class="thumb-container">
+                                <div class="thumb">
+                                    <img src="img/3.png" alt="">
+                                </div>
+                                <div class="performer_heading">
+                                    <h4>Mingle Bingo</h4>
+                                    <span>Venue: Nila Hall</span>
+                                    <!-- List of rules -->
+                                    <ul>
+                                        <li>Rule 1: Maximum 4 participants per team.</li>
+                                        <li>Rule 2: No mobile phones allowed during the game.</li>
+                                        <li>Rule 3: Bingo cards will be provided before the event.</li>
+                                    </ul>
+                                </div>
                             </div>
-                            <div class="performer_heading">
-                                <h4>Meme It Up</h4>
-                                <span>Venue: MBA Lab</span>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="single_performer wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s">
+                            <div class="thumb-container">
+                                <div class="thumb">
+                                    <img src="img/4.png" alt="">
+                                </div>
+                                <div class="performer_heading">
+                                    <h4>Meme It Up</h4>
+                                    <span>Venue: MBA Lab</span>
+                                    <!-- List of rules -->
+                                    <ul>
+                                        <li>Rule 1: Only original memes allowed.</li>
+                                        <li>Rule 2: Meme creation must be done in the provided time.</li>
+                                        <li>Rule 3: Offensive content will be disqualified.</li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -426,19 +483,19 @@
         </div>
     </div>
 </div>
-<!-- performar_area_end  -->
+<!-- performar_area_end -->
 
     
-    <div class="program_details_area detials_bg_1 overlay2" id="gallery1">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section_title text-center mb-80  wow fadeInRight" data-wow-duration="1s" data-wow-delay=".3s">
-                        <h3>Gallery</h3>
-                    </div>
+<div class="program_details_area detials_bg_1 overlay2" id="gallery1">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section_title text-center mb-80 wow fadeInRight" data-wow-duration="1s" data-wow-delay=".3s">
+                    <h3>Gallery</h3>
                 </div>
             </div>
-            <div style="margin: 0; display: grid;place-content: center;">
+        </div>
+        <div class="gallery-wrapper">
             <div class="gallery">
                 <img src="https://picsum.photos/id/1028/300/300" alt="a forest after an apocalypse">
                 <img src="https://picsum.photos/id/15/300/300" alt="a waterfall and many rocks">
@@ -449,11 +506,14 @@
                 <img src="https://picsum.photos/id/110/300/300" alt="a cool landscape">
                 <img src="https://picsum.photos/id/1047/300/300" alt="inside a town between two big buildings">
                 <img src="https://picsum.photos/id/1057/300/300" alt="a great view of the sea above the mountain">
-              </div>
-        </div>
+                <img src="https://picsum.photos/id/110/300/300" alt="a cool landscape">
+                <img src="https://picsum.photos/id/1047/300/300" alt="inside a town between two big buildings">
+                <img src="https://picsum.photos/id/1057/300/300" alt="a great view of the sea above the mountain">
+            </div>
         </div>
     </div>
-    <!-- footer_start  -->
+</div>
+<!-- footer_start  -->
     <footer class="footer" id="contact">
         <div class="footer_top">
             <div class="container">
